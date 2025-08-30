@@ -357,6 +357,7 @@ export function useLLM() {
       },
       body: JSON.stringify({
         provider: config.provider,
+        apiKey: config.apiKey, // Add the missing API key
         model: config.model,
         prompt,
         temperature: config.temperature,
