@@ -10,7 +10,8 @@ app.use(cors({
   origin: [
     'http://localhost:5173',
     'http://localhost:3000',
-    'https://exquisite-rolypoly-d18630.netlify.app', // Your new Netlify domain
+    'https://exquisite-rolypoly-d18630.netlify.app',
+    'https://frolicking-ganache-d7b381.netlify.app', // Your current Netlify domain
     'https://*.netlify.app',
     'https://*.render.com'
   ],
