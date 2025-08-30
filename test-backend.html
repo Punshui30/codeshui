@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Backend Test</title>
+</head>
+<body>
+    <h1>Testing CodeShui Backend</h1>
+    <button onclick="testBackend()">Test Backend Connection</button>
+    <div id="result"></div>
+
+    <script>
+        async function testBackend() {
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = 'Testing...';
+            
+            try {
+                const response = await fetch('https://codeshui-backend.onrender.com/health');
+                if (response.ok) {
+                    const data = await response.json();
+                    resultDiv.innerHTML = `✅ Backend is working! Status: ${data.status}`;
+                } else {
+                    resultDiv.innerHTML = `❌ Backend error: ${response.status} ${response.statusText}`;
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `❌ Connection failed: ${error.message}`;
+            }
+        }
+    </script>
+</body>
+</html>

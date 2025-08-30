@@ -1,0 +1,163 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #1a1a1a;
+  --foreground: #ffffff;
+  --card: #2a2a2a;
+  --card-foreground: #ffffff;
+  --popover: #2a2a2a;
+  --popover-foreground: #ffffff;
+  --primary: #d4af37; /* Metallic gold */
+  --primary-foreground: #000000;
+  --secondary: #c0c0c0; /* Metallic silver */
+  --secondary-foreground: #000000;
+  --muted: #404040;
+  --muted-foreground: #a0a0a0;
+  --accent: #404040;
+  --accent-foreground: #ffffff;
+  --destructive: #dc2626; /* Metallic red */
+  --destructive-foreground: #ffffff;
+  --border: #404040;
+  --input: #404040;
+  --ring: #d4af37;
+  --radius: 0.5rem;
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+body {
+  color: hsl(var(--foreground));
+  background: hsl(var(--background));
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #2a2a2a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d4af37;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b8941f;
+}
+
+/* Loader animation for Spline */
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #d4af37;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Spotlight animation */
+@keyframes spotlight {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-spotlight {
+  animation: spotlight 2s ease .75s 1 forwards;
+}
+
+/* Custom animations */
+@keyframes golden-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.animate-golden-pulse {
+  animation: golden-pulse 2s ease-in-out infinite;
+}
+
+/* Custom shadows */
+.shadow-golden {
+  box-shadow: 0 4px 14px 0 rgba(255, 215, 0, 0.39);
+}
+
+/* Custom gradients */
+.bg-gradient-golden {
+  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+}
+
+/* Custom colors */
+:root {
+  --codeshui-dark-50: #0a0a0a;
+  --codeshui-dark-100: #1a1a1a;
+  --codeshui-dark-200: #2a2a2a;
+  --codeshui-dark-300: #3a3a3a;
+  --codeshui-dark-400: #4a4a4a;
+  --codeshui-500: #ffd700;
+  --accent-gold: #ffed4e;
+}
+
+/* Custom styles for better UX */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Smooth transitions for all interactive elements */
+* {
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+/* Focus styles */
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Monaco Editor styles compatibility */
+.monaco-editor {
+  background-color: #1f2937 !important;
+}
+
+.monaco-editor .margin {
+  background-color: #374151 !important;
+}
+
+/* File type colors */
+.file-html { color: #e34c26; }
+.file-css { color: #1572b6; }
+.file-js { color: #f7df1e; }
+.file-json { color: #00d4aa; }
+.file-md { color: #083fa1; }
+.file-ts { color: #3178c6; }
